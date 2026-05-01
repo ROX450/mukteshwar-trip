@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏔️ A Little Request for Agnibha's Mom 🏔️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Quicksand:wght@400;600;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --pink: #ff006e;
+            --purple: #8338ec;
+            --blue: #3a86ff;
+            --yellow: #ffbe0b;
+            --cyan: #00f5ff;
+            --hot: #ff10f0;
+            --lime: #39ff14;
+            --dark: #0a0a0a;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #16213e 100%);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10,10,10,0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 3px solid var(--pink);
+            box-shadow: 0 0 30px rgba(255,0,110,0.5);
+        }
+
+        nav .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, var(--pink), var(--purple), var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav ul { display: flex; gap: 2rem; list-style: none; }
+        nav a {
+            color: var(--cyan);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+        }
+        nav a:hover { color: var(--pink); text-shadow: 0 0 15px var(--pink); }
+
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ff006e, #8338ec, #3a86ff, #ffbe0b, #ff006e);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+            padding: 2rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: bgMove 20s linear infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes bgMove {
+            0% { transform: translate(0,0); }
+            100% { transform: translate(50px,50px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(0,0,0,0.3);
+            border: 2px solid var(--yellow);
+            border-radius: 50px;
+            padding: 0.5rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--yellow);
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            text-shadow: 0 0 30px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
+            margin-bottom: 1.2rem;
+            animation: floatUpDown 3s ease-in-out infinite;
+        }
+
+        @keyframes floatUpDown {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 0 15px rgba(0,0,0,0.4);
+            margin-bottom: 0.8rem;
+        }
+
+        .hero-sub {
+            font-size: 1.1rem !important;
+            opacity: 0.9;
+        }
+
+        .scroll-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            background: linear-gradient(45deg, var(--pink), var(--hot));
+            color: white;
+            padding: 1.2rem 3.5rem;
+            border: 3px solid var(--lime);
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+            box-shadow: 0 0 30px var(--pink);
+            font-family: 'Poppins', sans-serif;
+            text-decoration: none;
+        }
+
+        .scroll-btn:hover {
+            transform: scale(1.1) rotate(3deg);
+            box-shadow: 0 0 50px var(--pink), 0 0 30px var(--hot);
+        }
+
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, var(--pink), var(--purple), var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 3rem;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: softPulse 2.5s ease-in-out infinite;
+        }
+
+        @keyframes softPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.85; }
+        }
+
+        /* Reasons */
+        .reasons-wrap {
+            background: linear-gradient(135deg, rgba(51,56,236,0.1), rgba(0,245,255,0.1));
+            border-radius: 20px;
+            border: 2px solid var(--cyan);
+            box-shadow: 0 0 30px rgba(0,245,255,0.25);
+            padding: 3rem 2rem;
+        }
+
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .reason-card {
+            background: linear-gradient(135deg, rgba(255,0,110,0.1), rgba(131,56,236,0.1));
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 2px solid var(--pink);
+            box-shadow: 0 0 20px rgba(255,0,110,0.3);
+            transition: all 0.3s;
+            animation: slideUp 0.8s ease-out both;
+        }
+
+        .reason-card:nth-child(1) { animation-delay: 0.1s; }
+        .reason-card:nth-child(2) { animation-delay: 0.2s; }
+        .reason-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .reason-card:hover {
+            transform: translateY(-12px) rotate(-1deg);
+            box-shadow: 0 0 40px var(--pink), 0 0 20px var(--purple);
+        }
+
+        .reason-card .emoji-big { font-size: 3rem; margin-bottom: 1rem; }
+
+        .reason-card h3 {
+            font-size: 1.4rem;
+            color: var(--yellow);
+            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .reason-card p {
+            color: #e0e0e0;
+            line-height: 1.8;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Quote box */
+        .quote-wrap {
+            background: linear-gradient(135deg, var(--purple), var(--hot));
+            border-radius: 20px;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(255,16,240,0.4);
+        }
+
+        .quote-wrap::before {
+            content: '🏔️';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 8rem;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(20px); }
+        }
+
+        .quote-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            background: rgba(0,0,0,0.3);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 2px solid var(--yellow);
+            position: relative;
+            z-index: 2;
+        }
+
+        .quote-inner h2 {
+            font-size: 2rem;
+            font-family: 'Poppins', sans-serif;
+            color: var(--yellow);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .quote-inner p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(255,0,110,0.15), rgba(0,245,255,0.15));
+            border-radius: 15px;
+            border: 2px solid var(--blue);
+            box-shadow: 0 0 20px rgba(57,134,255,0.3);
+            transition: all 0.3s;
+        }
+
+        .stat-box:hover { transform: scale(1.05); box-shadow: 0 0 40px var(--blue); }
+
+        .stat-num {
+            font-size: 3.5rem;
+            color: var(--yellow);
+            font-weight: 900;
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 0 0 20px var(--yellow);
+        }
+
+        .stat-lbl {
+            color: var(--cyan);
+            margin-top: 0.5rem;
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        /* Activities */
+        .activities-wrap {
+            background: linear-gradient(135deg, rgba(57,134,255,0.1), rgba(255,190,11,0.1));
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            border: 2px solid var(--lime);
+        }
+
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .act-card {
+            background: linear-gradient(135deg, rgba(255,0,110,0.12), rgba(51,56,236,0.12));
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid var(--lime);
+            box-shadow: 0 0 20px rgba(57,255,20,0.25);
+            transition: all 0.3s;
+            animation: scaleIn 0.6s ease-out both;
+        }
+
+        .act-card:nth-child(1) { animation-delay: 0.1s; }
+        .act-card:nth-child(2) { animation-delay: 0.2s; }
+        .act-card:nth-child(3) { animation-delay: 0.3s; }
+        .act-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .act-card:hover { transform: translateY(-12px) rotate(2deg); box-shadow: 0 0 40px var(--lime); }
+
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .act-emoji {
+            height: 130px;
+            background: linear-gradient(135deg, var(--purple), var(--pink));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .act-content { padding: 1.5rem; }
+        .act-content h4 {
+            color: var(--yellow);
+            margin-bottom: 0.7rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .act-content p { color: #e0e0e0; font-size: 0.95rem; line-height: 1.6; font-weight: 600; }
+
+        /* Concerns */
+        .concerns-wrap {
+            background: linear-gradient(135deg, var(--pink), #ff4d4d);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 0 40px rgba(255,0,110,0.4);
+        }
+
+        .concerns-wrap h3 {
+            font-size: 2rem;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+
+        .concern-item {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(0,0,0,0.2);
+            border-left: 4px solid var(--yellow);
+            border-radius: 10px;
+        }
+
+        .concern-item strong { color: var(--yellow); font-size: 1.1rem; display: block; margin-bottom: 0.5rem; }
+        .concern-item p { color: white; font-weight: 600; line-height: 1.6; }
+
+        /* Yes/No Section */
+        .decision-section {
+            text-align: center;
+            padding: 6rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .decision-box {
+            background: linear-gradient(135deg, rgba(131,56,236,0.2), rgba(0,245,255,0.2));
+            border: 3px solid var(--yellow);
+            border-radius: 25px;
+            padding: 4rem 3rem;
+            box-shadow: 0 0 50px rgba(255,190,11,0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .decision-box::before {
+            content: '🙏';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 7rem;
+            opacity: 0.08;
+        }
+
+        .decision-box h2 {
+            font-size: 2.5rem;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, var(--yellow), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+        }
+
+        .decision-box p {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            font-weight: 600;
+        }
+
+        .btn-row {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        .btn-yes {
+            background: linear-gradient(45deg, #00c851, #00e676);
+            color: white;
+            border: 3px solid var(--lime);
+            padding: 1.2rem 3.5rem;
+            font-size: 1.3rem;
+            font-weight: 800;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            box-shadow: 0 0 25px rgba(0,200,81,0.6);
+        }
+
+        .btn-yes:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 50px rgba(0,200,81,0.9);
+        }
+
+        .btn-no {
+            background: linear-gradient(45deg, #555, #888);
+            color: white;
+            border: 2px solid #aaa;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        /* Celebration overlay */
+        #celebrate {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        #celebrate.show { display: flex; animation: fadeIn 0.5s ease; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        #celebrate h1 {
+            font-size: 5rem;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #00e676, var(--yellow), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: floatUpDown 1.5s ease-in-out infinite;
+            margin-bottom: 1rem;
+        }
+
+        #celebrate p {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            max-width: 600px;
+            line-height: 1.8;
+        }
+
+        .confetti-emoji {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 1rem;
+            animation: spinBounce 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes spinBounce {
+            from { transform: rotate(-10deg) scale(1); }
+            to { transform: rotate(10deg) scale(1.2); }
+        }
+
+        footer {
+            background: linear-gradient(135deg, #0a0a0a, #1a0a2e);
+            color: var(--cyan);
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 3px solid var(--pink);
+            box-shadow: 0 0 30px rgba(255,0,110,0.3);
+        }
+
+        footer p { margin: 0.7rem 0; font-size: 1rem; font-weight: 600; }
+
+        .made-by {
+            color: var(--yellow);
+            font-weight: 800;
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 0 0 15px var(--yellow);
+        }
+
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 1rem; padding: 1rem; }
+            nav .logo { font-size: 1.4rem; }
+            nav ul { gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
+            .hero { margin-top: 140px; }
+            .hero h1 { font-size: 2.5rem; }
+            .section-title { font-size: 2rem; }
+            .decision-box { padding: 2.5rem 1.5rem; }
+            .decision-box h2 { font-size: 1.8rem; }
+            .btn-row { gap: 1rem; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero p { font-size: 1rem; }
+            .section-title { font-size: 1.6rem; }
+            .reason-card { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Celebration Overlay -->
+<div id="celebrate">
+    <span class="confetti-emoji">🎉🏔️🎉</span>
+    <h1>SHE SAID YES!!!</h1>
+    <p>Auntie ji, aap duniya ki sabse best mom hain! 🙏<br>Agnibha is going to have the time of his life — and he'll come back with stories that'll make you proud. Thank you from the bottom of our hearts! ❤️</p>
+</div>
+
+<!-- Navigation -->
+<nav>
+    <div class="logo">🌄 Mukteshwar 2025</div>
+    <ul>
+        <li><a href="#why">Why?</a></li>
+        <li><a href="#activities">Plan</a></li>
+        <li><a href="#concerns">FAQs</a></li>
+        <li><a href="#decision">Decision</a></li>
+    </ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-tag">✉️ A humble letter to Agnibha's Mom</div>
+        <h1>🏔️ The Mukteshwar Trip 🏔️</h1>
+        <p>We put together this little website because we really, truly want Agnibha on this trip.</p>
+        <p class="hero-sub">4 Days · 3 Nights · Mountains · Memories · Maybe some drama 😅</p>
+        <a class="scroll-btn" href="#why">Read our case 👇</a>
+    </div>
+</section>
+
+<!-- Why Section -->
+<section id="why">
+    <h2 class="section-title">🤔 Why Agnibha Should Come</h2>
+    <div class="reasons-wrap">
+        <div class="reasons-grid">
+
+            <div class="reason-card">
+                <div class="emoji-big">🧠</div>
+                <h3>He'll Learn Things School Can't Teach</h3>
+                <p>Textbooks are great, but mountains teach something else entirely — patience, teamwork, problem-solving, and the ability to keep going even when things get tough. Honestly? These are the skills that stick for life. This isn't just a vacation, it's a crash course in growing up (the fun way).</p>
+            </div>
+
+            <div class="reason-card">
+                <div class="emoji-big">👥</div>
+                <h3>This Friend Group Won't Always Be Together</h3>
+                <p>We know this sounds dramatic, but it's true — Class 12 is right around the corner, and after that it's colleges in different cities, new lives, new schedules. This trip is genuinely one of the last chances for all of us to just be together without the weight of boards hanging over us. We don't want to look back and wish we had gone.</p>
+            </div>
+
+            <div class="reason-card">
+                <div class="emoji-big">💪</div>
+                <h3>He's More Than Ready</h3>
+                <p>Auntie ji, Agnibha hasn't needed his inhaler in over 2 years — that's not luck, that's growth. The air in Mukteshwar is genuinely clean and fresh, far better than what we breathe in Delhi every day. If anything, the mountains will do his lungs a favour, not a disservice. We promise.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Quote -->
+<section>
+    <div class="quote-wrap">
+        <div class="quote-inner">
+            <h2>A Small Thought 💭</h2>
+            <p>The best stories your kids tell at dinner tables — the ones they'll tell their own children someday — never start with "I stayed home and studied." They start with "You won't believe what happened when we were in the mountains..."</p>
+            <p style="color: var(--yellow); font-size: 1rem; margin-top: 1rem;">— Agnibha's extremely convincing friends 😇</p>
+        </div>
+    </div>
+</section>
+
+<!-- Stats -->
+<section style="text-align: center;">
+    <h2 class="section-title">The Numbers, Auntie Ji 📊</h2>
+    <div class="stats-grid">
+        <div class="stat-box">
+            <div class="stat-num">100%</div>
+            <div class="stat-lbl">Fun, Guaranteed</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-num">0%</div>
+            <div class="stat-lbl">Boring Moments</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-num">♾️</div>
+            <div class="stat-lbl">Memories Made</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-num">1</div>
+            <div class="stat-lbl">Chance Like This</div>
+        </div>
+    </div>
+</section>
+
+<!-- Activities -->
+<section id="activities" class="activities-wrap" style="max-width: 1200px; margin: 0 auto 4rem;">
+    <h2 class="section-title">What's the Plan? 🗓️</h2>
+    <div class="activities-grid">
+        <div class="act-card">
+            <div class="act-emoji">🥾</div>
+            <div class="act-content">
+                <h4>Trekking & Nature Walks</h4>
+                <p>Scenic trails with proper guidance. Not extreme — just beautiful mountain paths that make you feel alive. Great exercise too (see, productive!).</p>
+            </div>
+        </div>
+        <div class="act-card">
+            <div class="act-emoji">🔥</div>
+            <div class="act-content">
+                <h4>Bonfire Evenings</h4>
+                <p>Real conversations under a sky full of stars. This is where friendships go from "we hang out" to "we're brothers for life." Priceless stuff, honestly.</p>
+            </div>
+        </div>
+        <div class="act-card">
+            <div class="act-emoji">🎯</div>
+            <div class="act-content">
+                <h4>Group Activities & Games</h4>
+                <p>Team challenges, creative problem-solving games, and plenty of laughter. Leadership skills in disguise — just don't tell him that.</p>
+            </div>
+        </div>
+        <div class="act-card">
+            <div class="act-emoji">📸</div>
+            <div class="act-content">
+                <h4>Memories Worth Keeping</h4>
+                <p>Sunsets from 2,286 metres above sea level, candid laughs, and moments he'll show his kids one day. Every single photo will be a treasure.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Concerns -->
+<section id="concerns" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem 6rem;">
+    <div class="concerns-wrap">
+        <h3>📋 We Figured You'd Ask...</h3>
+
+        <div class="concern-item">
+            <strong>What about his health? (Asthma, etc.) 😤</strong>
+            <p>We completely understand why you'd be concerned — and we want to put your mind at ease. Agnibha has been inhaler-free for over 2 years now, which is genuinely impressive. Mukteshwar is known for its exceptionally clean mountain air. We'll carry necessary medicines, have emergency contacts on hand, and there will be adult supervision throughout. You have our word he'll be looked after.</p>
+        </div>
+
+        <div class="concern-item">
+            <strong>What about his studies? 📚</strong>
+            <p>Four days, Auntie ji. That's all this is. Class 11 allows for that. In fact, a short mental break often leads to sharper focus when students return — it's genuinely backed by science. He'll come back refreshed, recharged, and honestly probably more motivated than before.</p>
+        </div>
+
+        <div class="concern-item">
+            <strong>Is it actually safe? 🛡️</strong>
+            <p>Yes, absolutely. This is an organized group trip — not a solo adventure. Experienced guides, proper accommodation, planned routes, and adult chaperones at every step. We're not "roughing it in the jungle." Think of it more like a structured, fun expedition.</p>
+        </div>
+
+        <div class="concern-item">
+            <strong>Why this trip specifically? Why now? 🤨</strong>
+            <p>Because Class 11 is the last real breathing room before Class 12 boards take over everything. Once that starts, this kind of trip won't be possible for years. This is the window — and we really don't want Agnibha to miss it. (Or us to miss him on it, honestly.)</p>
+        </div>
+    </div>
+</section>
+
+<!-- Final Pitch -->
+<section style="max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem;">
+    <div class="quote-wrap">
+        <div class="quote-inner">
+            <h2>The Bottom Line 🎯</h2>
+            <p>Agnibha will either be...</p>
+            <p style="color: #00e676; font-size: 1.2rem;">✅ The one who went to the mountains and came back with stories for a lifetime</p>
+            <p style="font-size: 1rem; color: #aaa;">...or...</p>
+            <p style="color: #ff6b6b; font-size: 1.2rem;">❌ The one who sat home and always wondered "yaar, kash main bhi jaata"</p>
+            <p style="margin-top: 1.5rem; color: white; font-size: 1.1rem;">Auntie ji, please let him be the first one. 🙏</p>
+        </div>
+    </div>
+</section>
+
+<!-- Decision Section -->
+<div class="decision-section" id="decision">
+    <div class="decision-box">
+        <h2>🙏 So... What Do You Say, Auntie Ji?</h2>
+        <p>
+            We made this entire website just to show you how much we want Agnibha with us. 
+            He's a great friend, a good kid, and he deserves this memory.<br><br>
+            The mountains are calling. Will you let him answer? 😊
+        </p>
+        <div class="btn-row" id="btnRow">
+            <button class="btn-yes" onclick="sayYes()">🎉 YES, He Can Go!</button>
+            <button class="btn-no" id="noBtn" onmouseover="runAway(event, this)" onclick="noClick(this)">😅 No...</button>
+        </div>
+        <p id="noMsg" style="display:none; margin-top:1.5rem; color: var(--yellow); font-size:1rem; font-weight:700; animation: softPulse 1s infinite;"></p>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+    <p>🎉 Made with love, friendship, and a lot of hope 🎉</p>
+    <p>Because sometimes you really do need to make mom smile before she says yes 😄</p>
+    <div class="made-by">
+        💻 Built by: Agnibha's Friends (The Real MVPs)
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; font-weight: 600; color: var(--cyan);">With respect, warmth, and just the right amount of dramatic flair 🙏</p>
+    </div>
+    <p style="margin-top: 2rem; opacity: 0.6; font-size: 0.85rem;">This website was made with friendship, mountain dreams, and pure determination. Let the adventure begin. 🏔️✨</p>
+</footer>
+
+<script>
+    let noCount = 0;
+    const noMessages = [
+        "Auntie ji... are you sure? 🥺",
+        "Please reconsider... the mountains are literally crying 😢",
+        "Okay okay the button got a little scared too 😅",
+        "Yeh button bhi nahi maanta aapka 'no' 🙈",
+        "He's going to be SO sad. The button is sad too. Look at it running. 😭",
+        "Auntie ji please 🙏🙏🙏 the button refuses to accept this",
+        "LAST CHANCE! Even the button is tired of running 😤",
+        "Fine... the button has accepted its fate. But has YOUR HEART? 💔"
+    ];
+
+    function runAway(e, btn) {
+        const row = document.getElementById('btnRow');
+        const rowRect = row.getBoundingClientRect();
+        
+        // Shrink the button a bit each time we hover
+        const currentSize = parseFloat(btn.style.fontSize) || 1;
+        const newSize = Math.max(0.6, currentSize - 0.05);
+        btn.style.fontSize = newSize + 'rem';
+        btn.style.padding = `${0.6 * newSize}rem ${1.5 * newSize}rem`;
+
+        // Move the button randomly but keep it inside the row area roughly
+        const maxX = Math.min(200, window.innerWidth * 0.2);
+        const maxY = 80;
+        const rx = (Math.random() - 0.5) * maxX * 2;
+        const ry = (Math.random() - 0.5) * maxY * 2;
+
+        btn.style.position = 'relative';
+        btn.style.left = rx + 'px';
+        btn.style.top = ry + 'px';
+        btn.style.transition = 'all 0.2s ease';
+        btn.style.opacity = Math.max(0.4, 1 - noCount * 0.07);
+    }
+
+    function noClick(btn) {
+        noCount++;
+        const msg = document.getElementById('noMsg');
+        msg.style.display = 'block';
+        msg.textContent = noMessages[Math.min(noCount - 1, noMessages.length - 1)];
+
+        // Shrink more on click
+        const currentSize = parseFloat(btn.style.fontSize) || 1;
+        const newSize = Math.max(0.5, currentSize - 0.1);
+        btn.style.fontSize = newSize + 'rem';
+
+        // Teleport to random position
+        const rx = (Math.random() - 0.5) * 300;
+        const ry = (Math.random() - 0.5) * 150;
+        btn.style.left = rx + 'px';
+        btn.style.top = ry + 'px';
+
+        if (noCount >= 8) {
+            btn.style.display = 'none';
+            msg.textContent = "The 'No' button has officially left the chat. Your move, Auntie ji. 😏";
+        }
+    }
+
+    function sayYes() {
+        const el = document.getElementById('celebrate');
+        el.classList.add('show');
+        // confetti burst with emojis
+        for (let i = 0; i < 15; i++) {
+            setTimeout(() => burst(), i * 150);
+        }
+    }
+
+    function burst() {
+        const emojis = ['🎉','🏔️','🥳','🌟','💛','✨','🎊','🙏','❤️'];
+        const el = document.createElement('div');
+        el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        el.style.cssText = `
+            position: fixed;
+            font-size: ${1.5 + Math.random() * 2}rem;
+            left: ${Math.random() * 100}vw;
+            top: ${Math.random() * 100}vh;
+            z-index: 99999;
+            pointer-events: none;
+            animation: burstAnim 1.5s ease-out forwards;
+        `;
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 1500);
+    }
+
+    document.getElementById('celebrate').addEventListener('click', () => {
+        document.getElementById('celebrate').classList.remove('show');
+    });
+</script>
+
+<style>
+    @keyframes burstAnim {
+        0% { transform: scale(0) rotate(0deg); opacity: 1; }
+        100% { transform: scale(1.5) rotate(360deg) translateY(-80px); opacity: 0; }
+    }
+</style>
+
+</body>
+</html>
